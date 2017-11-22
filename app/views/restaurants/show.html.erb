@@ -1,0 +1,16 @@
+<div class='container'>
+  <div class='row'>
+    <h2><%= @restaurant.name %></h2>
+    <ul>
+    <li><p class="fa fa-map-marker">   <%= @restaurant.address %></p></li>
+    <li><p class="fa fa-mobile">   <%= @restaurant.phone_number %></p></li>
+    <li><p class="fa fa-cutlery">   <%= @restaurant.category %></p></li>
+      <p<%= @restaurant.reviews.each do |review| %></p>
+      <p><%= review.content %></p>
+      <P><%= review.rating %></P>
+    <%end%>
+    </ul>
+      <%= link_to "Retour à la liste", restaurants_path, class:"btn btn-primary"%>
+      <%= link_to "Donner son avis", new_restaurant_review_path(@restaurant), class:"btn btn-primary"%>
+  </div>
+</div>
